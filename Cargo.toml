@@ -11,6 +11,7 @@ readme = "./README.md"
 rust-version = "1.58"
 
 [features]
+# If enabled, segment files will be pre-allocated.
 pre_alloc = []
 
 [dependencies]
