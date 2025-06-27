@@ -6,6 +6,7 @@ publish = false
 
 [features]
 sqlite = ["dep:rusqlite"]
+pre_alloc = ["okaywal/pre_alloc"]
 
 [dependencies]
 tempfile = "3.3.0"
