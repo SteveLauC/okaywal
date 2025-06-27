@@ -18,6 +18,14 @@ are also plotted, see the png files.
 ```sh
 $ uname -a
 Linux fedora 6.10.9-100.fc39.x86_64 #1 SMP PREEMPT_DYNAMIC Mon Sep  9 02:28:01 UTC 2024 x86_64 GNU/Linux
+
+$ lscpu
+Architecture:             x86_64
+  CPU op-mode(s):         32-bit, 64-bit
+  Address sizes:          48 bits physical, 48 bits virtual
+  Byte Order:             Little Endian
+CPU(s):                   32
+  On-line CPU(s) list:    0-31
 ```
 
 ## macOS env:
@@ -30,6 +38,9 @@ BuildVersion:           25A5295e
 
 $ uname -a
 Darwin Steves-MacBook-Air.local 25.0.0 Darwin Kernel Version 25.0.0: Tue Jun 17 00:04:39 PDT 2025; root:xnu-12377.0.122.0.1~120/RELEASE_ARM64_T8103 arm64
+
+$ sysctl -n hw.ncpu
+8
 ```
 
 # Run the benchmarks
