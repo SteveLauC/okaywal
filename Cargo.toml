@@ -10,12 +10,16 @@ categories = ["database"]
 readme = "./README.md"
 rust-version = "1.58"
 
+[features]
+pre_alloc = []
+
 [dependencies]
 parking_lot = "0.12.1"
 crc32c = "0.6.3"
 flume = "0.11.0"
 tracing = { version = "0.1.36", optional = true }
 file-manager = { git = "https://github.com/khonsulabs/file-manager", branch = "main" }
+cfg-if = "1.0.1"
 
 [dev-dependencies]
 tempfile = "3.3.0"

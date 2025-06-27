@@ -177,8 +177,14 @@ where
         if let Some(bytes_to_fill) = bytes_to_fill {
             if bytes_to_fill > 0 {
                 let mut bytes_to_fill = usize::try_from(bytes_to_fill).to_io()?;
-                // Pre-allocate this disk space by writing zeroes.
-                file.set_len(padded_length)?;
+
+                cfg_if::cfg_if!{
+                    if #[cfg(feature = "pre_alloc")] {
+                        // Pre-allocate this disk space by writing zeroes.
+                        file.set_len(padded_length)?;
+                    }
+                }
+
                 file.seek(SeekFrom::Start(validated_length))?;
                 while bytes_to_fill > 0 {
                     let bytes_to_write = bytes_to_fill.min(ZEROES.len());
